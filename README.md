@@ -1,4 +1,4 @@
-![logo](screenshots\CoverImageBTGraphEditor.png)
+![CoverImage](screenshots/CoverImageBTGraphEditor.png)
 
 # <img src="BTGraphEditor\addons\btgrapheditor\Icons\BTIcon.png" alt="icon" width="24"/> BTGraphEditor
 An addon for editing, debugging, and running behavior tree graphs. GDExtension binaries for Windows, Linux, and MacOS(Unsigned).
