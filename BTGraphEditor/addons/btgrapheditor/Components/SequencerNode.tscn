@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://vqksx7kh7ly1"]
+
+[ext_resource type="PackedScene" uid="uid://bagpaqjyywr1q" path="res://addons/btgrapheditor/Components/BehaviorNode.tscn" id="1_8m6c2"]
+
+[node name="BehaviorNode" instance=ExtResource("1_8m6c2")]
+title = "Sequencer"
+slot/1/left_enabled = true
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = true
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+
+[node name="OptionButton" type="OptionButton" parent="." index="2"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Top Down Sequence"
+popup/item_0/id = 0
+popup/item_1/text = "Parallel (No Sequence)"
+popup/item_1/id = 1
+popup/item_2/text = "Random Sequence"
+popup/item_2/id = 2
+popup/item_3/text = "Totally Random (No Sequence)"
+popup/item_3/id = 3

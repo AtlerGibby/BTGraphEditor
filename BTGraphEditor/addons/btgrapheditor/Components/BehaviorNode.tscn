@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://bagpaqjyywr1q"]
+
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BehaviorNode.gd" id="1_wv6aa"]
+
+[node name="BehaviorNode" type="GraphNode"]
+z_index = 1
+offset_right = 213.0
+offset_bottom = 65.0
+tooltip_text = "Behavior Tree Node"
+title = "Node"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_wv6aa")
+
+[node name="Spacer" type="HSeparator" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Spacer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -11.0
+offset_top = -25.0
+offset_right = 16.0
+offset_bottom = 6.0
+grow_horizontal = 0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = " X "
+flat = true

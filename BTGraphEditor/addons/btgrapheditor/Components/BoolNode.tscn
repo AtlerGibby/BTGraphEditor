@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://b18p43efqaahj"]
+
+[ext_resource type="PackedScene" uid="uid://bagpaqjyywr1q" path="res://addons/btgrapheditor/Components/BehaviorNode.tscn" id="1_2h2lw"]
+
+[node name="BehaviorNode" instance=ExtResource("1_2h2lw")]
+offset_bottom = 167.0
+title = "Bool"
+slot/1/left_enabled = true
+slot/1/left_type = 1
+slot/1/left_color = Color(0.913725, 0, 0.337255, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+slot/3/left_enabled = true
+slot/3/left_type = 1
+slot/3/left_color = Color(0.913725, 0, 0.337255, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color(1, 1, 1, 1)
+slot/3/right_icon = null
+slot/3/draw_stylebox = true
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color(1, 1, 1, 1)
+slot/4/left_icon = null
+slot/4/right_enabled = true
+slot/4/right_type = 1
+slot/4/right_color = Color(0.913725, 0, 0.337255, 1)
+slot/4/right_icon = null
+slot/4/draw_stylebox = true
+isBoolNode = true
+enabled_color = Color(0.913725, 0, 0.337255, 1)
+disabled_color = Color(1, 0.733333, 0.756863, 0.160784)
+
+[node name="Label" type="Label" parent="." index="2"]
+layout_mode = 2
+text = "Statement 1"
+
+[node name="OptionButton" type="OptionButton" parent="." index="3"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "AND"
+popup/item_0/id = 0
+popup/item_1/text = "OR"
+popup/item_1/id = 1
+popup/item_2/text = "NOT"
+popup/item_2/id = 2
+popup/item_3/text = "XOR"
+popup/item_3/id = 3
+
+[node name="Label2" type="Label" parent="." index="4"]
+layout_mode = 2
+text = "Statement 2"
+
+[node name="Label3" type="Label" parent="." index="5"]
+layout_mode = 2
+text = "Result"
+horizontal_alignment = 2

@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://ke4mtdrv6t7p"]
+
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BTSimulationGraph.gd" id="1_1ydpc"]
+
+[node name="BtSimulationGraph" type="Window"]
+title = "Behavior Tree Simulation"
+position = Vector2i(0, 36)
+size = Vector2i(512, 512)
+visible = false
+script = ExtResource("1_1ydpc")
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+self_modulate = Color(0.74902, 0.74902, 0.74902, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+minimap_enabled = false
+show_menu = false
+
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 122.0
+offset_bottom = 39.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Open Simulation"

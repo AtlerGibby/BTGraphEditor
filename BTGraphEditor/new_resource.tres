@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="BTGraph" load_steps=9 format=3 uid="uid://gfns3dogg1ye"]
+
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BTGraph.gd" id="1_jfe41"]
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BTData.gd" id="1_tvk5m"]
+[ext_resource type="Script" path="res://NPC.gd" id="2_pmxu2"]
+
+[sub_resource type="Resource" id="Resource_qhpmv"]
+script = ExtResource("1_tvk5m")
+type = 0
+name = "Root"
+pos = Vector2(80, 100)
+size = Vector2(134, 78)
+opt_1 = 0
+opt_2 = 0
+txt = ""
+col = Color(0, 0, 0, 1)
+rid = "RootNode"
+
+[sub_resource type="Resource" id="Resource_xff60"]
+script = ExtResource("1_tvk5m")
+type = 0
+name = "Sequencer"
+pos = Vector2(280, 100)
+size = Vector2(257, 65)
+opt_1 = 0
+opt_2 = 0
+txt = ""
+col = Color(0, 0, 0, 1)
+rid = "BehaviorNode"
+
+[sub_resource type="Resource" id="Resource_7wh82"]
+script = ExtResource("1_tvk5m")
+type = 0
+name = "Comment"
+pos = Vector2(40, -40)
+size = Vector2(845.081, 311.889)
+opt_1 = 6
+opt_2 = 0
+txt = "TEAL TIME"
+col = Color(0, 0.513726, 0.443137, 0.698039)
+rid = "Comment"
+
+[sub_resource type="Resource" id="Resource_pkwpr"]
+script = ExtResource("1_tvk5m")
+type = 0
+name = "Wait"
+pos = Vector2(620, 80)
+size = Vector2(249, 103)
+opt_1 = 0
+opt_2 = 0
+txt = "5"
+col = Color(0, 0, 0, 1)
+rid = "@GraphNode@19365"
+
+[sub_resource type="Resource" id="Resource_8jyhn"]
+script = ExtResource("1_tvk5m")
+type = 1
+name = "Variable 0"
+pos = Vector2(0, 0)
+size = Vector2(0, 0)
+opt_1 = 0
+opt_2 = 0
+txt = ""
+col = Color(0, 0, 0, 1)
+rid = ""
+
+[resource]
+script = ExtResource("1_jfe41")
+connections = [{
+"from_node": &"BehaviorNode",
+"from_port": 0,
+"to_node": &"@GraphNode@19365",
+"to_port": 0
+}, {
+"from_node": &"RootNode",
+"from_port": 0,
+"to_node": &"BehaviorNode",
+"to_port": 0
+}]
+data = [SubResource("Resource_qhpmv"), SubResource("Resource_xff60"), SubResource("Resource_7wh82"), SubResource("Resource_pkwpr"), SubResource("Resource_8jyhn")]
+gdscript = ExtResource("2_pmxu2")

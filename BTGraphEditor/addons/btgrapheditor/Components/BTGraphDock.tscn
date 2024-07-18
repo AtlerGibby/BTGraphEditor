@@ -1,0 +1,386 @@
+[gd_scene load_steps=17 format=3 uid="uid://bnktqxwmn0xr2"]
+
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BTGraphDock.gd" id="1_ey3n8"]
+[ext_resource type="PackedScene" uid="uid://8e8v211d5s6g" path="res://addons/btgrapheditor/Components/VariableNode.tscn" id="11_j4t38"]
+[ext_resource type="PackedScene" uid="uid://b10y1ry41k88h" path="res://addons/btgrapheditor/Components/SignalNode.tscn" id="12_i8x7j"]
+[ext_resource type="Texture2D" uid="uid://dd2skc5wb2q41" path="res://addons/btgrapheditor/Icons/AddStatement.png" id="14_is7tn"]
+[ext_resource type="Texture2D" uid="uid://d4cdowt5ke1gt" path="res://addons/btgrapheditor/Icons/AddBoolean.png" id="15_tbavy"]
+[ext_resource type="Texture2D" uid="uid://bpbk0pcmju2qx" path="res://addons/btgrapheditor/Icons/AddIf.png" id="16_0ogwy"]
+[ext_resource type="Texture2D" uid="uid://0um6qkm26yxf" path="res://addons/btgrapheditor/Icons/AddSequencer.png" id="17_j0ik3"]
+[ext_resource type="Texture2D" uid="uid://cdriyy6m3ac3t" path="res://addons/btgrapheditor/Icons/AddAction.png" id="18_oiywx"]
+[ext_resource type="Texture2D" uid="uid://dtyhudlkd5ual" path="res://addons/btgrapheditor/Icons/AddWait.png" id="19_8c48q"]
+[ext_resource type="Texture2D" uid="uid://ceco2crjmuwu" path="res://addons/btgrapheditor/Icons/AddComment.png" id="20_rljme"]
+[ext_resource type="Texture2D" uid="uid://b0g0v2lg1iw76" path="res://addons/btgrapheditor/Icons/CommentLock.png" id="21_7gku5"]
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BehaviorDropBox.gd" id="22_375jg"]
+[ext_resource type="Texture2D" uid="uid://chunp8qqdulth" path="res://addons/btgrapheditor/Icons/Refresh16.png" id="23_dpto3"]
+[ext_resource type="Texture2D" uid="uid://bbxss6jbkor3w" path="res://addons/btgrapheditor/Icons/AddVar.png" id="24_2duyn"]
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BehaviorGraphEdit.gd" id="25_ko556"]
+[ext_resource type="Texture2D" uid="uid://dohkmvrgvthjr" path="res://addons/btgrapheditor/Icons/AddSignal.png" id="26_obcqm"]
+
+[node name="BTGraphDock" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_ey3n8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+custom_minimum_size = Vector2(58, 0)
+layout_mode = 2
+tooltip_text = "Add a \"Statement\" graph node."
+icon = ExtResource("14_is7tn")
+flat = true
+expand_icon = true
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+custom_minimum_size = Vector2(58, 0)
+layout_mode = 2
+tooltip_text = "Add a \"Bool\" graph node."
+icon = ExtResource("15_tbavy")
+flat = true
+expand_icon = true
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer2"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+custom_minimum_size = Vector2(58, 0)
+layout_mode = 2
+tooltip_text = "Add an \"If\" branch graph node."
+icon = ExtResource("16_0ogwy")
+flat = true
+expand_icon = true
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer2"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+custom_minimum_size = Vector2(58, 0)
+layout_mode = 2
+tooltip_text = "Add an \"Sequencer\" branch graph node."
+icon = ExtResource("17_j0ik3")
+flat = true
+expand_icon = true
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer2"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+custom_minimum_size = Vector2(58, 0)
+layout_mode = 2
+tooltip_text = "Add an \"Action\" graph node."
+icon = ExtResource("18_oiywx")
+flat = true
+expand_icon = true
+
+[node name="VSeparator5" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer2"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+custom_minimum_size = Vector2(58, 0)
+layout_mode = 2
+tooltip_text = "Add a \"Wait\" graph node."
+icon = ExtResource("19_8c48q")
+flat = true
+expand_icon = true
+
+[node name="VSeparator6" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="VBoxContainer/HBoxContainer2"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+custom_minimum_size = Vector2(58, 0)
+layout_mode = 2
+tooltip_text = "Add a \"Comment\"."
+icon = ExtResource("20_rljme")
+flat = true
+expand_icon = true
+
+[node name="VSeparator7" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+
+[node name="Button9" type="Button" parent="VBoxContainer/HBoxContainer2"]
+process_mode = 4
+visible = false
+modulate = Color(1, 1, 1, 0.2)
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+tooltip_text = "Add a \"Comment\"."
+icon = ExtResource("21_7gku5")
+flat = true
+expand_icon = true
+
+[node name="VSeparator8" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+tooltip_text = "The GDScript connected to this Behavior Tree.
+- \"Wait\" signal options will be populated by signals in this script.
+- \"Action\" options come from functions in this script marked
+   with \"BTAction_\" at the begining of the function name. "
+mouse_filter = 0
+text = " Drap GDScript Here... "
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_375jg")
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer2/HBoxContainer/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.470588)
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Refresh \"Wait\" and \"Action\" nodes if signals and actions were created or deleted in the GDScript."
+disabled = true
+icon = ExtResource("23_dpto3")
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(26, 0)
+layout_mode = 2
+tooltip_text = "Remove the GDScript."
+disabled = true
+text = "X"
+
+[node name="VSeparator9" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator10" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(58, 0)
+layout_mode = 2
+tooltip_text = "Load a Behavior Tree Graph resource."
+text = "Load"
+expand_icon = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Variables" type="Control" parent="VBoxContainer/HBoxContainer"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.13
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer/Variables"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.364706, 0.364706, 0.364706, 0.356863)
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Variables"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+text = "Variables"
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/Variables/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.04
+offset_left = -44.0
+offset_top = 9.0
+offset_right = 15.0
+offset_bottom = 15.48
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+tooltip_text = "Add new variable."
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Variables/Label/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_2duyn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/Variables"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Variables/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GraphEdit" type="GraphEdit" parent="VBoxContainer/HBoxContainer"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 2
+size_flags_horizontal = 3
+minimap_enabled = false
+show_menu = false
+script = ExtResource("25_ko556")
+variale_node = ExtResource("11_j4t38")
+signal_node = ExtResource("12_i8x7j")
+
+[node name="Actions" type="Control" parent="VBoxContainer/HBoxContainer"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.2)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.13
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer/Actions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.364706, 0.364706, 0.364706, 0.356863)
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Actions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+text = "Signals"
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/Actions/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.035
+offset_left = -49.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 11.545
+grow_horizontal = 0
+scale = Vector2(0.7, 0.7)
+tooltip_text = "Add new signal."
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Actions/Label/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_obcqm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/Actions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Actions/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+scaling_3d_mode = 2
+scaling_3d_scale = 0.25
+size = Vector2i(170, 100)
+item_count = 3
+item_0/text = "Delete Variable"
+item_0/id = 0
+item_1/text = "Edit Variable"
+item_1/id = 1
+item_2/text = "Duplicate Variable"
+item_2/id = 2
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+position = Vector2i(0, 36)
+size = Vector2i(512, 512)
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.tres", "*.res")

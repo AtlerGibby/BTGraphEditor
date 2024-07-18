@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://byeg25v7vq3t7"]
+
+[ext_resource type="PackedScene" uid="uid://bagpaqjyywr1q" path="res://addons/btgrapheditor/Components/BehaviorNode.tscn" id="1_c0t30"]
+
+[node name="BehaviorNode" instance=ExtResource("1_c0t30")]
+title = "If"
+slot/1/left_enabled = true
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = true
+slot/2/left_type = 1
+slot/2/left_color = Color(0.913725, 0, 0.337255, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color(1, 1, 1, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = true
+slot/3/right_type = 0
+slot/3/right_color = Color(1, 1, 1, 1)
+slot/3/right_icon = null
+slot/3/draw_stylebox = true
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color(1, 1, 1, 1)
+slot/4/left_icon = null
+slot/4/right_enabled = true
+slot/4/right_type = 0
+slot/4/right_color = Color(1, 1, 1, 1)
+slot/4/right_icon = null
+slot/4/draw_stylebox = true
+slot/5/left_enabled = false
+slot/5/left_type = 0
+slot/5/left_color = Color(1, 1, 1, 1)
+slot/5/left_icon = null
+slot/5/right_enabled = false
+slot/5/right_type = 0
+slot/5/right_color = Color(1, 1, 1, 1)
+slot/5/right_icon = null
+slot/5/draw_stylebox = true
+
+[node name="Label" type="Label" parent="." index="2"]
+layout_mode = 2
+
+[node name="Label1" type="Label" parent="." index="3"]
+layout_mode = 2
+text = "Bool"
+
+[node name="Label2" type="Label" parent="." index="4"]
+layout_mode = 2
+text = "Is True"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="." index="5"]
+layout_mode = 2
+text = "Is False"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="." index="6"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2

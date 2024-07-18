@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cltwlbmy55xgq"]
+
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BehaviorVariable.gd" id="1_rn22d"]
+[ext_resource type="Texture2D" uid="uid://d4f8s6tjpni04" path="res://addons/btgrapheditor/Icons/Integer16.png" id="2_h7tqw"]
+[ext_resource type="Texture2D" uid="uid://dbn2unhpyw1ld" path="res://addons/btgrapheditor/Icons/Float16.png" id="3_0ynxu"]
+[ext_resource type="Texture2D" uid="uid://dpnlscgi8t8f8" path="res://addons/btgrapheditor/Icons/Bool16.png" id="4_bnu78"]
+
+[node name="Button" type="Button"]
+mouse_default_cursor_shape = 13
+text = "Item 1"
+script = ExtResource("1_rn22d")
+int_img = ExtResource("2_h7tqw")
+flt_img = ExtResource("3_0ynxu")
+bool_img = ExtResource("4_bnu78")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Variable"
+wrap_mode = 1

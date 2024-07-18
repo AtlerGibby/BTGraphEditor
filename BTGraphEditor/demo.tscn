@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://by7j6y8fdm210"]
+
+[ext_resource type="PackedScene" uid="uid://ke4mtdrv6t7p" path="res://addons/btgrapheditor/Components/BTSimulationGraph.tscn" id="1_7623o"]
+[ext_resource type="Script" path="res://DemoManager.gd" id="2_ijugc"]
+[ext_resource type="PackedScene" uid="uid://dump2c66alw1r" path="res://addons/btgrapheditor/demo/blue_guy.tscn" id="3_twc1t"]
+[ext_resource type="PackedScene" uid="uid://dfuu5aug24ioa" path="res://addons/btgrapheditor/demo/red_guy.tscn" id="5_lbxnc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oq86j"]
+
+[sub_resource type="Sky" id="Sky_oohat"]
+sky_material = SubResource("ProceduralSkyMaterial_oq86j")
+
+[sub_resource type="Environment" id="Environment_30r23"]
+background_mode = 2
+sky = SubResource("Sky_oohat")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ci1i"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qx2ol"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vru6d"]
+albedo_color = Color(0.262745, 0.529412, 0.294118, 1)
+
+[node name="Demo" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_30r23")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, -0.75, 0.433013, 0, 0.5, 0.866025, -0.866025, -0.433013, 0.25, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_3ci1i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("BoxMesh_qx2ol")
+surface_material_override/0 = SubResource("StandardMaterial3D_vru6d")
+
+[node name="BtSimulationGraph" parent="." instance=ExtResource("1_7623o")]
+enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.793353, 0.608761, 0, -0.608761, 0.793353, 0, 10.48, 15.522)
+script = ExtResource("2_ijugc")
+red_guy = ExtResource("5_lbxnc")
+blue_guy = ExtResource("3_twc1t")
+
+[node name="PointA" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.5, 6)
+mesh = SubResource("BoxMesh_qx2ol")
+
+[node name="PointB" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.5, 3)
+mesh = SubResource("BoxMesh_qx2ol")
+
+[node name="PointC" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -17)
+mesh = SubResource("BoxMesh_qx2ol")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.125, 7.079, 13.77)
+billboard = 1
+text = "R - Spawn Red Guy
+B - Spawn Blue Guy
+E - Get Moving!
+T - Toggle Bool Test (Check BTGraphs to see what it does)
+Q - Destroy All Guys"
+horizontal_alignment = 0

@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfuu5aug24ioa"]
+
+[ext_resource type="Script" path="res://NPC.gd" id="1_52w53"]
+[ext_resource type="Material" uid="uid://lwdoc6c1lp7x" path="res://addons/btgrapheditor/demo/red_team_mat.tres" id="2_amk4e"]
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BTInterpreter.gd" id="3_2qqbk"]
+[ext_resource type="Resource" uid="uid://vkq30gn6lw25" path="res://red_guy_bt.res" id="4_i16lv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mqji8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_n70pf"]
+
+[node name="RedGuy" type="CharacterBody3D"]
+collision_mask = 0
+script = ExtResource("1_52w53")
+my_team = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_mqji8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_n70pf")
+surface_material_override/0 = ExtResource("2_amk4e")
+
+[node name="BTInterpreter" type="Node3D" parent="."]
+script = ExtResource("3_2qqbk")
+BTResource = ExtResource("4_i16lv")
+execute_logic = true
+
+[node name="BTInterpreterCPP" type="BTInterpreterCPP" parent="."]

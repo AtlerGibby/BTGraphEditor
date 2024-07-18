@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://b10y1ry41k88h"]
+
+[ext_resource type="PackedScene" uid="uid://bagpaqjyywr1q" path="res://addons/btgrapheditor/Components/BehaviorNode.tscn" id="1_fbcgn"]
+
+[node name="BehaviorNode" instance=ExtResource("1_fbcgn")]
+title = "Signal"
+slot/1/left_enabled = true
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+isSignalNode = true
+
+[node name="OptionButton" type="OptionButton" parent="." index="2"]
+layout_mode = 2
+item_count = 1
+selected = 0
+popup/item_0/text = "No Actions"
+popup/item_0/id = 0
+
+[node name="HSeparator" type="HSeparator" parent="." index="3"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2

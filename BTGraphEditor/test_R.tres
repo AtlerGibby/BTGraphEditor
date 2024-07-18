@@ -1,0 +1,135 @@
+[gd_resource type="Resource" script_class="BTGraph" load_steps=11 format=3 uid="uid://b2apdae5k3xjl"]
+
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BTData.gd" id="1_sg1xf"]
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BTGraph.gd" id="1_vob53"]
+
+[sub_resource type="Resource" id="Resource_tuf6t"]
+script = ExtResource("1_sg1xf")
+type = 0
+name = "Root"
+pos = Vector2(93, 91)
+size = Vector2(134, 78)
+opt_1 = 0
+opt_2 = 0
+txt = ""
+col = Color(0, 0, 0, 1)
+rid = "RootNode"
+
+[sub_resource type="Resource" id="Resource_he12w"]
+script = ExtResource("1_sg1xf")
+type = 0
+name = "If"
+pos = Vector2(580, -60)
+size = Vector2(213, 141)
+opt_1 = 0
+opt_2 = 0
+txt = ""
+col = Color(0, 0, 0, 1)
+rid = "@GraphNode@19223"
+
+[sub_resource type="Resource" id="Resource_k75cq"]
+script = ExtResource("1_sg1xf")
+type = 0
+name = "Sequencer"
+pos = Vector2(840, 20)
+size = Vector2(257, 65)
+opt_1 = 0
+opt_2 = 0
+txt = ""
+col = Color(0, 0, 0, 1)
+rid = "@GraphNode@19232"
+
+[sub_resource type="Resource" id="Resource_e7u4h"]
+script = ExtResource("1_sg1xf")
+type = 0
+name = "Comment"
+pos = Vector2(300, -300)
+size = Vector2(740.9, 155.92)
+opt_1 = 0
+opt_2 = 0
+txt = "MY COMMENT"
+col = Color(0.623529, 0.839216, 0.643137, 0.698039)
+rid = "Comment"
+
+[sub_resource type="Resource" id="Resource_3fnp0"]
+script = ExtResource("1_sg1xf")
+type = 0
+name = "Statement"
+pos = Vector2(60, 320)
+size = Vector2(213, 173)
+opt_1 = 0
+opt_2 = 0
+txt = ""
+col = Color(0, 0, 0, 1)
+rid = "BehaviorNode"
+
+[sub_resource type="Resource" id="Resource_8n1pn"]
+script = ExtResource("1_sg1xf")
+type = 0
+name = "Bool"
+pos = Vector2(300, 180)
+size = Vector2(213, 167)
+opt_1 = 0
+opt_2 = 0
+txt = ""
+col = Color(0, 0, 0, 1)
+rid = "@GraphNode@19220"
+
+[sub_resource type="Resource" id="Resource_sfytq"]
+script = ExtResource("1_sg1xf")
+type = 0
+name = "Action"
+pos = Vector2(1200, -20)
+size = Vector2(213, 95)
+opt_1 = 0
+opt_2 = 0
+txt = ""
+col = Color(0, 0, 0, 1)
+rid = "@GraphNode@19250"
+
+[sub_resource type="Resource" id="Resource_icqde"]
+script = ExtResource("1_sg1xf")
+type = 0
+name = "Wait"
+pos = Vector2(1180, 120)
+size = Vector2(213, 103)
+opt_1 = 0
+opt_2 = 0
+txt = ""
+col = Color(0, 0, 0, 1)
+rid = "@GraphNode@19264"
+
+[resource]
+script = ExtResource("1_vob53")
+connections = [{
+"from_node": &"RootNode",
+"from_port": 0,
+"to_node": &"@GraphNode@19223",
+"to_port": 0
+}, {
+"from_node": &"BehaviorNode",
+"from_port": 0,
+"to_node": &"@GraphNode@19220",
+"to_port": 0
+}, {
+"from_node": &"@GraphNode@19220",
+"from_port": 0,
+"to_node": &"@GraphNode@19223",
+"to_port": 1
+}, {
+"from_node": &"@GraphNode@19223",
+"from_port": 0,
+"to_node": &"@GraphNode@19232",
+"to_port": 0
+}, {
+"from_node": &"@GraphNode@19232",
+"from_port": 0,
+"to_node": &"@GraphNode@19250",
+"to_port": 0
+}, {
+"from_node": &"@GraphNode@19232",
+"from_port": 0,
+"to_node": &"@GraphNode@19264",
+"to_port": 0
+}]
+data = [SubResource("Resource_tuf6t"), SubResource("Resource_he12w"), SubResource("Resource_k75cq"), SubResource("Resource_e7u4h"), SubResource("Resource_3fnp0"), SubResource("Resource_8n1pn"), SubResource("Resource_sfytq"), SubResource("Resource_icqde")]

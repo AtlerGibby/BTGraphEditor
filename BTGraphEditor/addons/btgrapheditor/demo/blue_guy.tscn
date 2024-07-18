@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://dump2c66alw1r"]
+
+[ext_resource type="Script" path="res://NPC.gd" id="1_l0rpp"]
+[ext_resource type="Material" uid="uid://btsu81ifkfrxk" path="res://addons/btgrapheditor/demo/blue_team_mat.tres" id="2_wqx6y"]
+[ext_resource type="Script" path="res://addons/btgrapheditor/Scripts/BTInterpreter.gd" id="3_21874"]
+[ext_resource type="Resource" uid="uid://dhxg2bgq5l25w" path="res://blue_guy_bt.res" id="4_ltcuy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mqji8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_n70pf"]
+
+[node name="BlueGuy" type="CharacterBody3D"]
+collision_mask = 0
+script = ExtResource("1_l0rpp")
+my_team = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_mqji8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_n70pf")
+surface_material_override/0 = ExtResource("2_wqx6y")
+
+[node name="BTInterpreter" type="Node3D" parent="."]
+script = ExtResource("3_21874")
+BTResource = ExtResource("4_ltcuy")
+execute_logic = true
+
+[node name="BTInterpreterCPP" type="BTInterpreterCPP" parent="."]
