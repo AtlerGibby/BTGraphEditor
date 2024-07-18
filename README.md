@@ -28,9 +28,9 @@ These are the components of the addon.
 ```python
 # Example of using some of the functions
 func example():
-    bt_interpreter = get_node("BTInterpreter")
+	bt_interpreter = get_node("BTInterpreter")
 	(bt_interpreter as BTInterpreter).connect_to_signal("SignalTest", self.callable_test)
-    (bt_interpreter as BTInterpreter).edit_variable("BoolTest", true)
+	(bt_interpreter as BTInterpreter).edit_variable("BoolTest", true)
 	(bt_interpreter as BTInterpreter).set_random_seed((position.x + 1) * (position.y + 1))
 ```
 
@@ -53,10 +53,10 @@ func BTAction_example (bt_wait : Array):
 	if bt_wait:
 		if position.distance_to(target.position) < 1:
 			velocity = Vector3.ZERO
-            print("Got To Target!")
+            		print("Got To Target!")
 			bt_wait[0] = true
 		else:
-            print("Going To Target...")
+            		print("Going To Target...")
 			bt_wait[0] = false
 ```
 
