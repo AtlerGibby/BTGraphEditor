@@ -45,7 +45,7 @@ These are the nodes used in a graph.
 * **SignalNode**: Emits a signal.
 * **ActionNode**: Calls a function as a callable. Can wait on a true return, false return, or nothing.
 * **WaitNode**: Waits for an amount time or on a signal to be emitted.
-* **CommentNode**: A comment box in a BTGraph.
+* **CommentNode**: A comment box in a BTGraph. (This Node can be buggy when moved / dragged behind other nodes)
 
 ```python
 # Example of a function that can be called by an Action Node. Action Node waits for bt_wait[0] to be true.
